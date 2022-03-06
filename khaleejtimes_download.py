@@ -2,7 +2,7 @@
 '''
 
 docker run -it ^
--v "E:\dcd_data":/dcd_data/ ^
+-v "E:\data":/data/ ^
 yanliang12/yan_sm_download:1.0.1
 
 python3 khaleejtimes_download.py &
@@ -51,8 +51,8 @@ today = 'dcd'
 today = datetime.datetime.now(pytz.timezone('Asia/Dubai'))
 today = today.strftime("date%Y")
 
-today_folder_page_html = '/dcd_data/khaleejtimes/page_html/source=%s'%(today)
-today_folder_page_list_html = '/dcd_data/khaleejtimes/page_list_html/source=%s'%(today)
+today_folder_page_html = '/data/khaleejtimes/page_html/source=%s'%(today)
+today_folder_page_list_html = '/data/khaleejtimes/page_list_html/source=%s'%(today)
 
 try:
 	os.makedirs(today_folder_page_html)

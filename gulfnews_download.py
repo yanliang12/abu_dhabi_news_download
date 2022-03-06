@@ -3,7 +3,7 @@
 '''
 
 docker run -it ^
--v "E:\dcd_data":/dcd_data/ ^
+-v "E:\data":/data/ ^
 yanliang12/yan_sm_download:1.0.1 
 
 bash gulfnews_download.sh &
@@ -47,8 +47,8 @@ sqlContext = SparkSession.builder.getOrCreate()
 today = datetime.datetime.now(pytz.timezone('Asia/Dubai'))
 today = today.strftime("date%Y")
 
-today_folder_page_html = '/dcd_data/gulfnews/page_html/source=%s'%(today)
-today_folder_page_list_html = '/dcd_data/gulfnews/page_list_html/source=%s'%(today)
+today_folder_page_html = '/data/gulfnews/page_html/source=%s'%(today)
+today_folder_page_list_html = '/data/gulfnews/page_list_html/source=%s'%(today)
 
 try:
 	os.makedirs(today_folder_page_html)
